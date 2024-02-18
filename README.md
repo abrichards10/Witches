@@ -1,16 +1,22 @@
-# witch_unite
+# Witch Trials
 
-A new Flutter project.
+Witch Trials is a witch-themed social networking app designed for girls to find groups of other girls to hang out with, while promoting inclusivity and friendship. Similar to Tinder, users can swipe through profiles and match with others based on shared interests and hobbies. Whether you're looking for fellow witches to join your coven, explore the occult, or simply meet like-minded friends, Witch Trials has you covered.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- **Profile Creation**: Users can create profiles showcasing their interests, hobbies, and what they're looking for in a friend.
+- **Swiping**: Swipe right to connect with someone or left to pass. Mutual matches can start chatting instantly.
+- **Group Hangouts**: Arrange group hangouts with matched users to meet new friends in a safe and inclusive environment.
+- **Inclusivity**: Witch Trials is dedicated to creating a welcoming space for all girls, regardless of their background, beliefs, or practices.
+- **Privacy and Safety**: Your privacy and safety are our top priorities. Only mutual matches can communicate, and you can block or report any users who make you feel uncomfortable.
 
-A few resources to get you started if this is your first Flutter project:
+## How It Works
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. **Create Your Profile**: Sign up and create a profile with photos and information about yourself.
+2. **Swipe Through Profiles**: Browse through profiles of other girls in your area and swipe right to connect.
+3. **Match and Chat**: If someone you like also swipes right on your profile, it's a match! Start chatting and plan your group hangout.
+4. **Arrange Hangouts**: Use the app to arrange group hangouts with your matches and make new friends.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Get Started
+
+Download Witch Trials today and start connecting with other girls in your area who share your interests and passions. Join our community of witches and forge new friendships that will last a lifetime!
