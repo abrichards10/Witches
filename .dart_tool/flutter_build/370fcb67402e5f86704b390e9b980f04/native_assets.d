@@ -1,0 +1,1 @@
+ /Users/angelarichards261/Desktop/Witch-App/Witches/.dart_tool/flutter_build/370fcb67402e5f86704b390e9b980f04/native_assets.yaml: 
