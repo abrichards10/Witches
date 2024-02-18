@@ -8,6 +8,7 @@ import 'package:swipe_cards/draggable_card.dart';
 import 'package:swipe_cards/swipe_cards.dart';
 import 'package:witch_unite/cards/content.dart';
 import 'package:witch_unite/cards/details_page.dart';
+import 'package:witch_unite/settings.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -102,7 +103,12 @@ class _HomePageState extends State<HomePage> {
             child: CircleAvatar(
               child: IconButton(
                 icon: Icon(Icons.settings),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SettingsPage()),
+                  );
+                },
                 // size: screenWidth * .05,
               ),
             ),
@@ -232,8 +238,7 @@ class _HomePageState extends State<HomePage> {
                                                       usersData[index]
                                                               ['location']
                                                           ['country'],
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
+                                                  overflow: TextOverflow.fade,
                                                   maxLines: 1,
                                                   softWrap: false,
                                                   textAlign: TextAlign.left,
@@ -431,7 +436,7 @@ class _HomePageState extends State<HomePage> {
                     child: Icon(
                       Icons.home,
                       color: Color(0xFF210255),
-                      size: 36,
+                      size: screenWidth * .08,
                     ),
                   ),
                 ),

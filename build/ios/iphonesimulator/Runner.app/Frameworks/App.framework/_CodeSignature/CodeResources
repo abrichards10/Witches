@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		ME0cAg6cl/bTZmwXEVgMugDccUI=
+		CW6ly7XR75200TtGZCq7I6lfKSQ=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		oG5/OGn+vw7vp/nu5DUDoZJ4nFc=
+		x3UablkFJ00ODvjJatyCHDM1HYQ=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -22,7 +22,27 @@
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		VznX3L93pC3rTuRSeuDmzihiakY=
+		E4SD5uiQZLylQLH/ibo3rBsfqRs=
+		</data>
+		<key>flutter_assets/assets/LeftWitch.png</key>
+		<data>
+		L5iWVHewsYk5z5x/6FKopX7+GXM=
+		</data>
+		<key>flutter_assets/assets/Owl.png</key>
+		<data>
+		+bm8p8WtkwCQyhb1zRpJ0DfgHX0=
+		</data>
+		<key>flutter_assets/assets/RightWitch.png</key>
+		<data>
+		yFr+PLJmBQpVMQo2dWZTaognEbc=
+		</data>
+		<key>flutter_assets/assets/Witch_ICON.png</key>
+		<data>
+		0GvjuAt6WWbeqIQu0H2gC3SLlfY=
+		</data>
+		<key>flutter_assets/assets/witch_profile.jpeg</key>
+		<data>
+		Abk1O9avyEW9fo9Ibt9Uan9E9fc=
 		</data>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
@@ -34,7 +54,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		etV3NJoKG07eid7DFNl32qyrh9s=
+		jab5l7UUl3z/kHWssmdpsf+W64M=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -55,14 +75,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			AK9VrT1vIYmP534P8JLRoc2lLJQbaGDpko1FyK+MCV0=
+			IoEpDg7QtvtQ2LuRxodRiF9PBWVPiIlhUgQa60hRbbo=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Sps95+7JukayebvM0TLjL1LW1VXXndpKp/O8tOm9ZR8=
+			cU4DE2SIdUYbUqaFYLywTbWUWPZU4KPM5nuv7Nl3t2w=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -76,7 +96,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			eus3p+jbEZdoCovP11hDY7hDqvx4xNOHF+zkjp1BRhY=
+			ZIjrS4LfUCv2MrVI+I0C79xhQ6oC1JWxMos5LHCKhCc=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/LeftWitch.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dbsKKs0eC3ppkzUbBBk1E0wfA8B6nEoxs39YT8PcKhU=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/Owl.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wZ2F868/KSwRZoooQDSscmfdjPp/cQU0nGwpl2nBp1o=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/RightWitch.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			EJ5PpJvb0+9CeK0V9RlwMIIwbuvK2NMR1KXsIifgWlk=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/Witch_ICON.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			yBCY/+dSafFiv98CdJpQ/xUJ9g6i9Qx37Sz9XWpJFw8=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/witch_profile.jpeg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Wx3HnBUO8raH0oGtMi65TQrAMo63+MzcHwDLYUSfzZ0=
 			</data>
 		</dict>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
@@ -97,7 +152,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fYd1neG0P1s0IoQyjxvk4EDIc2Q2Zi6A/FSgZ9j+OE0=
+			i0+nBv+fxylSxT0L9ancpC8udoyReD5xf6sDwlOTzG4=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
