@@ -34,14 +34,15 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        fontFamily: GoogleFonts.labrada().fontFamily,
+        // fontFamily: GoogleFonts.labrada().fontFamily,
         // fontFamily: GoogleFonts.eagleLake().fontFamily,
-        // fontFamily: GoogleFonts.quando().fontFamily,
+        fontFamily: GoogleFonts.quando().fontFamily,
         appBarTheme: AppBarTheme(
           backgroundColor: Color.fromARGB(255, 24, 10, 30),
           titleTextStyle: TextStyle(
             color: Colors.white,
-            fontFamily: GoogleFonts.labrada().fontFamily,
+            // fontFamily: GoogleFonts.labrada().fontFamily,
+            fontFamily: GoogleFonts.quando().fontFamily,
           ),
         ),
 

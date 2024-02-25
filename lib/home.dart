@@ -6,6 +6,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:swipe_cards/draggable_card.dart';
 import 'package:swipe_cards/swipe_cards.dart';
+import 'package:witch_unite/account.dart';
 import 'package:witch_unite/cards/content.dart';
 import 'package:witch_unite/cards/details_page.dart';
 import 'package:witch_unite/settings.dart';
@@ -451,9 +452,17 @@ class _HomePageState extends State<HomePage> {
               ),
               BottomNavigationBarItem(
                 label: "Account",
-                icon: Image.asset(
-                  "assets/Witch_ICON.png",
-                  height: screenWidth * .08,
+                icon: IconButton(
+                  icon: Image.asset(
+                    "assets/Witch_ICON.png",
+                    height: screenWidth * .08,
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AccountPage()),
+                    );
+                  },
                 ),
               ),
             ],
