@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		CW6ly7XR75200TtGZCq7I6lfKSQ=
+		N8seLUMbf8+oB+NW1JW026Upd4U=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		x3UablkFJ00ODvjJatyCHDM1HYQ=
+		eHrpskd6SVxKw7KS6Xh8xZFqPPs=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		EltcZVjYiUU0hwGAK8JxG1flJx4=
+		eQ+//J8/xQeYMThJaapR+EJCha0=
 		</data>
 		<key>flutter_assets/assets/LeftWitch.png</key>
 		<data>
@@ -36,9 +36,33 @@
 		<data>
 		yFr+PLJmBQpVMQo2dWZTaognEbc=
 		</data>
+		<key>flutter_assets/assets/SwipeExample.png</key>
+		<data>
+		Ioq5OMXrW4mfDuMj88ixiuwqSnw=
+		</data>
+		<key>flutter_assets/assets/Welcome_Pic.png</key>
+		<data>
+		84R+NHBGaCOBCgbP2i8sGZoUICc=
+		</data>
 		<key>flutter_assets/assets/Witch_ICON.png</key>
 		<data>
 		0GvjuAt6WWbeqIQu0H2gC3SLlfY=
+		</data>
+		<key>flutter_assets/assets/create_profile.jpg</key>
+		<data>
+		yofZvwnPBlKn6L3PqekH8t1avvM=
+		</data>
+		<key>flutter_assets/assets/final.jpg</key>
+		<data>
+		WNItbEtkcGwtPfj+TIoD2AtO6Ws=
+		</data>
+		<key>flutter_assets/assets/flutter.png</key>
+		<data>
+		X9p4dtL23sNQ7D7h/5HhQo6eoCc=
+		</data>
+		<key>flutter_assets/assets/profile_pic.png</key>
+		<data>
+		ReEajzuTzjM4cYL+jh14P2e4wsk=
 		</data>
 		<key>flutter_assets/assets/witch_profile.jpeg</key>
 		<data>
@@ -54,7 +78,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		wBVp7cYSWtVQqNQrnKdpS9ZsAY8=
+		NhtMCw5XB3ygLVYysRGreGJHHpk=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -75,14 +99,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IoEpDg7QtvtQ2LuRxodRiF9PBWVPiIlhUgQa60hRbbo=
+			HEbogOd0tmSFM+TyH5HnSgA1+/zvs2DYq7muzyMpZoI=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cU4DE2SIdUYbUqaFYLywTbWUWPZU4KPM5nuv7Nl3t2w=
+			ZXyza4GIJCILoRz0foHkGRJuCS7hgSHahJqa+2iukGc=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -96,7 +120,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2dIre98z48pM4BWChPn75QmIabWkOD2hzn0+lgwkmrg=
+			9mxIPapG3/1n1OJVz3Z0PBJ1bFtXzgVzi27BA1yXFZc=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/LeftWitch.png</key>
@@ -120,11 +144,53 @@
 			EJ5PpJvb0+9CeK0V9RlwMIIwbuvK2NMR1KXsIifgWlk=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/SwipeExample.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			1UdH14N885KGdjCTXTMiPubYiuCiHj1iq96VYrsOsG0=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/Welcome_Pic.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			07ulHYXarfXrrNWz1/WUzroiVZJMJ0v3FnVqrnfrc70=
+			</data>
+		</dict>
 		<key>flutter_assets/assets/Witch_ICON.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			yBCY/+dSafFiv98CdJpQ/xUJ9g6i9Qx37Sz9XWpJFw8=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/create_profile.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Uqg7GnFUyjnjiqPviK9oMxbIIyY60FEWih4rpP50orI=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/final.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			QfOCDbSjy6jT3oPcTz5w296JLhxabJopukovaA852SA=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/flutter.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			132sIbYpP96QuCalNzm4MOsyksEf1SlU6whTONkmC9Y=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/profile_pic.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			AAn6iSHVbGVYZeMCK+hGKZJGn5sBDDiXZCcDwkVyz1g=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/witch_profile.jpeg</key>
@@ -152,7 +218,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			jw7aX6WvwWrgVm8AeBRTfF0OudDsb4pNzLf/ZHS5Z/w=
+			JgOoKVnsSSoGEl2rjGQc+P0xXr4tZyTqWb5DhbrqTjs=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

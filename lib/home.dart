@@ -146,8 +146,9 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(24.0),
-                                    child: Image.network(
-                                      "https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?cs=srgb&dl=pexels-hitesh-choudhary-3532552.jpg&fm=jpg",
+                                    child: Image.asset(
+                                      // TODO: change to .network
+                                      "assets/create_profile.jpg",
                                       // usersData[index]['picture']
                                       //     ['large'], //TODO: GETS PICTURE
                                       fit: BoxFit.cover,

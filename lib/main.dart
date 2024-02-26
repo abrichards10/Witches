@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:witch_unite/home.dart';
+import 'package:witch_unite/onboarding.dart';
 
 void main() {
   runApp(
@@ -36,7 +37,13 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         // fontFamily: GoogleFonts.labrada().fontFamily,
         // fontFamily: GoogleFonts.eagleLake().fontFamily,
-        fontFamily: GoogleFonts.quando().fontFamily,
+        // fontFamily: GoogleFonts.quando().fontFamily,
+        // fontFamily: GoogleFonts.barriecito().fontFamily,
+        // fontFamily: GoogleFonts.caveat().fontFamily,
+        // fontFamily: GoogleFonts.shadowsIntoLightTwo().fontFamily, // cool
+        // fontFamily: GoogleFonts.indieFlower().fontFamily, // cool
+        fontFamily: GoogleFonts.shantellSans().fontFamily, // cool
+
         appBarTheme: AppBarTheme(
           backgroundColor: Color.fromARGB(255, 24, 10, 30),
           titleTextStyle: TextStyle(
@@ -55,7 +62,7 @@ class _MyAppState extends State<MyApp> {
         ),
         useMaterial3: true,
       ),
-      home: HomePage(),
+      home: OnBoardingPage(),
     );
   }
 }

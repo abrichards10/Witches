@@ -14,7 +14,7 @@ class AccountPage extends StatefulWidget {
 class _AccountPageState extends State<AccountPage> {
   File? _image;
   final ImagePicker _picker = ImagePicker();
-  String _username = 'user123'; // Default username
+  TextEditingController _emailController = TextEditingController();
 
   Future<void> _getImage() async {
     final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
@@ -26,57 +26,6 @@ class _AccountPageState extends State<AccountPage> {
         print('No image selected.');
       }
     });
-  }
-
-  Future<void> _changeUsernameDialog() async {
-    return showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(
-            'Who are you?',
-            style: TextStyle(
-              color: Colors.white,
-            ),
-          ),
-          content: TextField(
-            onChanged: (value) {
-              _username = value;
-            },
-            decoration: InputDecoration(
-              hintText: 'Enter new username',
-              hintStyle: TextStyle(
-                color: Colors.grey,
-              ),
-            ),
-          ),
-          actions: <Widget>[
-            TextButton(
-              child: Text(
-                'Save',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-              onPressed: () {
-                setState(() {
-                  // Save the new username
-                  Navigator.of(context).pop();
-                });
-              },
-            ),
-            TextButton(
-              child: Text(
-                'Cancel',
-              ),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
-    );
   }
 
   @override
@@ -140,25 +89,24 @@ class _AccountPageState extends State<AccountPage> {
                 color: Colors.white,
               ),
               title: Text(
-                _username,
+                'Username',
                 style: TextStyle(
                   fontSize: screenWidth * .04,
                   color: Colors.white,
                 ),
               ),
               subtitle: Text(
-                "Username",
+                'user123',
                 style: TextStyle(
                   // fontSize: screenWidth * .06,
                   color: Colors.white,
                 ),
               ),
-              trailing: GestureDetector(
-                onTap: _changeUsernameDialog,
-                child: Icon(
-                  Icons.edit,
-                  color: Colors.white,
-                ),
+              trailing: IconButton(
+                icon: Icon(Icons.edit, color: Colors.white),
+                onPressed: () {
+                  _showUsernameDialog();
+                },
               ),
             ),
             ListTile(
@@ -180,13 +128,12 @@ class _AccountPageState extends State<AccountPage> {
                   color: Colors.white,
                 ),
               ),
-              trailing: Icon(
-                Icons.edit,
-                color: Colors.white,
+              trailing: IconButton(
+                icon: Icon(Icons.edit, color: Colors.white),
+                onPressed: () {
+                  _showEmailDialog();
+                },
               ),
-              onTap: () {
-                // Handle email editing
-              },
             ),
             ListTile(
               leading: Icon(
@@ -250,6 +197,71 @@ class _AccountPageState extends State<AccountPage> {
           ],
         ),
       ),
+    );
+  }
+
+  void _showUsernameDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Change Username'),
+          content: TextField(
+            decoration: InputDecoration(hintText: 'Enter new username'),
+            onChanged: (value) {
+              // Handle text field changes
+            },
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () {
+                // Add functionality to change username
+                Navigator.of(context).pop();
+              },
+              child: Text('Save'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _showEmailDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Change Email'),
+          content: TextField(
+            controller: _emailController,
+            decoration: InputDecoration(hintText: 'Enter new email'),
+            onChanged: (value) {
+              // Handle text field changes
+            },
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () {
+                // Add functionality to change email
+                Navigator.of(context).pop();
+              },
+              child: Text('Save'),
+            ),
+          ],
+        );
+      },
     );
   }
 }

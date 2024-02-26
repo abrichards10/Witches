@@ -2,6 +2,11 @@
 file_selector_linux=/Users/missionbit/.pub-cache/hosted/pub.dev/file_selector_linux-0.9.2+1/
 file_selector_macos=/Users/missionbit/.pub-cache/hosted/pub.dev/file_selector_macos-0.9.3+3/
 file_selector_windows=/Users/missionbit/.pub-cache/hosted/pub.dev/file_selector_windows-0.9.3+1/
+flutter_keyboard_visibility=/Users/missionbit/.pub-cache/hosted/pub.dev/flutter_keyboard_visibility-5.4.1/
+flutter_keyboard_visibility_linux=/Users/missionbit/.pub-cache/hosted/pub.dev/flutter_keyboard_visibility_linux-1.0.0/
+flutter_keyboard_visibility_macos=/Users/missionbit/.pub-cache/hosted/pub.dev/flutter_keyboard_visibility_macos-1.0.0/
+flutter_keyboard_visibility_web=/Users/missionbit/.pub-cache/hosted/pub.dev/flutter_keyboard_visibility_web-2.0.0/
+flutter_keyboard_visibility_windows=/Users/missionbit/.pub-cache/hosted/pub.dev/flutter_keyboard_visibility_windows-1.0.0/
 flutter_plugin_android_lifecycle=/Users/missionbit/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.17/
 image_picker=/Users/missionbit/.pub-cache/hosted/pub.dev/image_picker-1.0.7/
 image_picker_android=/Users/missionbit/.pub-cache/hosted/pub.dev/image_picker_android-0.8.9+3/
