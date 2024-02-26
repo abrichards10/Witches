@@ -49,7 +49,8 @@ class _MyAppState extends State<MyApp> {
           titleTextStyle: TextStyle(
             color: Colors.white,
             // fontFamily: GoogleFonts.labrada().fontFamily,
-            fontFamily: GoogleFonts.quando().fontFamily,
+            // fontFamily: GoogleFonts.quando().fontFamily,
+            fontFamily: GoogleFonts.shantellSans().fontFamily, // cool
           ),
         ),
 

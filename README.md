@@ -20,3 +20,11 @@ Witch Trials is a witch-themed social networking app designed for girls to find 
 ## Get Started
 
 Download Witch Trials today and start connecting with other girls in your area who share your interests and passions. Join our community of witches and forge new friendships that will last a lifetime!
+
+|                                            Home Screen                                             |                                           Filter Careers                                           |                                       Connect with a Helper!                                       |
+| :------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------: |
+| ![](https://github.com/abrichards10/Demo-App/assets/54547597/f2802c64-e4c7-47ed-8157-25be4e37ae19) | ![](https://github.com/abrichards10/Demo-App/assets/54547597/ea5ef72b-c359-47b8-864c-59095eec3d87) | ![](https://github.com/abrichards10/Demo-App/assets/54547597/53d7ddc8-32d3-4cfb-be48-df8a4d01abc3) |
+
+|                                              Account                                               |                                              Explore!                                              |                                      Rate your experience ⭐                                       |
+| :------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------: |
+| ![](https://github.com/abrichards10/Demo-App/assets/54547597/75816865-7f4a-4d19-9572-7db1f64939c1) | ![](https://github.com/abrichards10/Demo-App/assets/54547597/a159baa9-ab79-47d6-9358-2178f42cff50) | ![](https://github.com/abrichards10/Demo-App/assets/54547597/c7c3762c-39e0-4362-854b-d5fca0157bba) |

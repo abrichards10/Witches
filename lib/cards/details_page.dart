@@ -149,9 +149,19 @@ class _DetailsPageState extends State<DetailsPage> {
                                           0,
                                         ),
                                         child: ElevatedButton.icon(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            showDialog(
+                                              context: context,
+                                              builder: (BuildContext context) {
+                                                return AlertDialog(
+                                                    content: Text("HELLO"));
+                                              },
+                                            );
+                                          },
                                           icon: Icon(
                                             Icons.mark_chat_read_rounded,
+                                            color: Color.fromARGB(
+                                                255, 62, 35, 109),
                                           ),
                                           label: Text(
                                             "Say Hi",
@@ -159,6 +169,8 @@ class _DetailsPageState extends State<DetailsPage> {
                                               fontSize: screenWidth * .04,
                                               overflow: TextOverflow.ellipsis,
                                               fontWeight: FontWeight.bold,
+                                              color: Color.fromARGB(
+                                                  255, 62, 35, 109),
                                             ),
                                           ),
                                           style: ElevatedButton.styleFrom(

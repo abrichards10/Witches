@@ -72,7 +72,7 @@ class OnBoardingPageState extends State<OnBoardingPage> {
       ),
       pages: [
         PageViewModel(
-          title: "Welcome to Witch Trials!",
+          title: "~Welcome to Witch Trials!~",
           body: "Make acquaintances with fellow wenches 🔮",
           image: Image.asset(
             'assets/Welcome_Pic.png',
@@ -184,9 +184,20 @@ class OnBoardingPageState extends State<OnBoardingPage> {
       showBackButton: false,
       //rtl: true, // Display as right-to-left
       back: const Icon(Icons.arrow_back),
-      skip: const Text('Skip', style: TextStyle(fontWeight: FontWeight.w600)),
-      next: const Icon(Icons.arrow_forward),
-      done: const Text('Done', style: TextStyle(fontWeight: FontWeight.w600)),
+      skip: const Text('Skip',
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            color: Colors.white,
+          )),
+      next: const Icon(
+        Icons.arrow_forward,
+        color: Colors.white,
+      ),
+      done: const Text('Done',
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            color: Colors.white,
+          )),
       curve: Curves.fastLinearToSlowEaseIn,
       controlsMargin: const EdgeInsets.all(16),
       controlsPadding: kIsWeb
