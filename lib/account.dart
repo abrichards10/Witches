@@ -54,17 +54,17 @@ class _AccountPageState extends State<AccountPage> {
                 onTap:
                     _getImage, // Call _getImage when the user taps the avatar
                 child: Container(
-                  height: screenWidth * .3, // Set the height dynamically
+                  height: screenWidth * .5, // Set the height dynamically
                   width: screenWidth * .3, // Set the width dynamically
 
                   // radius: screenWidth * 0.1,
                   // backgroundImage: _image != null ? FileImage(_image!) : null,
                   child: _image == null
-                      ? CircleAvatar(
-                          radius: screenWidth * .6,
+                      ? Container(
+                          height: screenWidth * .6,
                           child: Image.asset(
-                            "assets/Witch_ICON.png",
-                            height: screenWidth * .24,
+                            "assets/AppIcon1.png",
+                            // height: screenWidth * .24,
                           ),
                         )
                       : CircleAvatar(
@@ -73,7 +73,9 @@ class _AccountPageState extends State<AccountPage> {
                 ),
               ),
             ),
-            SizedBox(height: screenWidth * 0.04),
+            SizedBox(
+              height: screenWidth * 0.04,
+            ),
             Text(
               'Profile Information',
               style: TextStyle(

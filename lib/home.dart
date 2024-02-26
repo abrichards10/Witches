@@ -9,6 +9,7 @@ import 'package:swipe_cards/swipe_cards.dart';
 import 'package:witch_unite/account.dart';
 import 'package:witch_unite/cards/content.dart';
 import 'package:witch_unite/cards/details_page.dart';
+import 'package:witch_unite/conversations.dart';
 import 'package:witch_unite/settings.dart';
 
 class HomePage extends StatefulWidget {
@@ -89,7 +90,7 @@ class _HomePageState extends State<HomePage> {
         title: Text(
           'Witch Trials',
           style: TextStyle(
-            fontSize: screenWidth * .08,
+            fontSize: screenWidth * .07,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -148,7 +149,7 @@ class _HomePageState extends State<HomePage> {
                                     borderRadius: BorderRadius.circular(24.0),
                                     child: Image.asset(
                                       // TODO: change to .network
-                                      "assets/create_profile.jpg",
+                                      "assets/final-1.jpg",
                                       // usersData[index]['picture']
                                       //     ['large'], //TODO: GETS PICTURE
                                       fit: BoxFit.cover,
@@ -429,29 +430,6 @@ class _HomePageState extends State<HomePage> {
             elevation: 16.0,
             items: <BottomNavigationBarItem>[
               BottomNavigationBarItem(
-                icon: Container(
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(2.0),
-                    child: Icon(
-                      Icons.home,
-                      color: Color(0xFF210255),
-                      size: screenWidth * .08,
-                    ),
-                  ),
-                ),
-                label: "Home",
-              ),
-              BottomNavigationBarItem(
-                label: "Matches",
-                icon: Icon(
-                  Icons.favorite_border,
-                  color: Color(0xFF210255),
-                ),
-              ),
-              BottomNavigationBarItem(
                 label: "Account",
                 icon: IconButton(
                   icon: Image.asset(
@@ -462,6 +440,37 @@ class _HomePageState extends State<HomePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => AccountPage()),
+                    );
+                  },
+                ),
+              ),
+              BottomNavigationBarItem(
+                icon: Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(2.0),
+                    child: Icon(
+                      Icons.home,
+                      color: Color(0xFF210255),
+                      size: screenWidth * .13,
+                    ),
+                  ),
+                ),
+                label: "Home",
+              ),
+              BottomNavigationBarItem(
+                label: "Matches",
+                icon: IconButton(
+                  icon: Icon(Icons.mail),
+                  color: Color(0xFF210255),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ConversationPage(),
+                      ),
                     );
                   },
                 ),
