@@ -36,292 +36,307 @@ class _AccountPageState extends State<AccountPage> {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
 
-    return Stack(
-      children: [
-        Scaffold(
-          appBar: AppBar(
-            title: Text(
-              'Account',
-              style: TextStyle(
-                fontSize: screenWidth * .07,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            iconTheme: IconThemeData(
-              color: Colors.white,
+    return Container(
+      color: Color.fromARGB(255, 24, 10, 30),
+      child: Stack(
+        children: [
+          Positioned.fill(
+            child: FloatingBubbles.alwaysRepeating(
+              noOfBubbles: 10,
+              colorsOfBubbles: [
+                Color.fromARGB(255, 134, 76, 175).withAlpha(30),
+                Color.fromARGB(255, 57, 11, 57),
+              ],
+              sizeFactor: 0.16,
+              opacity: 70,
+              paintingStyle: PaintingStyle.fill,
+              shape: BubbleShape.circle,
+              speed: BubbleSpeed.slow,
             ),
           ),
-          body: SingleChildScrollView(
-            child: Container(
-              padding: EdgeInsets.all(screenWidth * .04),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Center(
-                        child: GestureDetector(
-                          onTap:
-                              _getImage, // Call _getImage when the user taps the avatar
-                          child: Container(
-                            height:
-                                screenWidth * .5, // Set the height dynamically
-                            width:
-                                screenWidth * .3, // Set the width dynamically
+          Scaffold(
+            backgroundColor: Colors.transparent,
+            appBar: AppBar(
+              title: Text(
+                'Account',
+                style: TextStyle(
+                  fontSize: screenWidth * .07,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              iconTheme: IconThemeData(
+                color: Colors.white,
+              ),
+            ),
+            body: SingleChildScrollView(
+              child: Container(
+                padding: EdgeInsets.all(screenWidth * .04),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Center(
+                          child: GestureDetector(
+                            onTap:
+                                _getImage, // Call _getImage when the user taps the avatar
+                            child: SizedBox(
+                              height: screenWidth *
+                                  .5, // Set the height dynamically
+                              width:
+                                  screenWidth * .3, // Set the width dynamically
 
-                            // radius: screenWidth * 0.1,
-                            // backgroundImage: _image != null ? FileImage(_image!) : null,
-                            child: _image == null
-                                ? Image.asset(
-                                    height: screenWidth * .3,
-                                    width: screenWidth * .3,
-                                    "assets/AppIcon1.png",
+                              // radius: screenWidth * 0.1,
+                              // backgroundImage: _image != null ? FileImage(_image!) : null,
+                              child: _image == null
+                                  ? Container(
+                                      decoration: BoxDecoration(
+                                        color: Color.fromARGB(
+                                          255,
+                                          24,
+                                          10,
+                                          30,
+                                        ),
+                                      ),
+                                      child: ClipOval(
+                                        child: Image.asset(
+                                          "assets/profile-stock.jpg",
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    )
+                                  : CircleAvatar(
+                                      backgroundImage: FileImage(_image!),
+                                    ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 52, 30, 76),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(30),
+                            ),
+                            // border: Border.all(
+                            //   color: Color.fromARGB(255, 89, 89, 89),
+                            //   width: 3,
+                            // ),
+                          ),
+                          padding: EdgeInsets.only(
+                            left: 10,
+                            top: 10,
+                            right: 20,
+                          ),
+                          height: screenWidth * .2,
+                          child: Row(
+                            children: [
+                              IconButton(
+                                icon: Image.asset("assets/Owl.png"),
+                                iconSize: screenWidth * .09,
+                                onPressed: () {
+                                  // _matchEngine!.currentItem?.superLike();
+                                },
+                                //child:  Text("Superlike"),
+                              ),
+                              Column(
+                                children: [
+                                  Text(
+                                    "You're a Hoot!",
+                                    style: TextStyle(
+                                      fontSize: screenWidth * .04,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                      height: 2,
+                                    ),
+                                  ),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        "Hoo ",
+                                        style: TextStyle(
+                                          fontSize: screenWidth * .03,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                          fontStyle: FontStyle.italic,
+                                        ),
+                                      ),
+                                      Text(
+                                        "liked you: ",
+                                        style: TextStyle(
+                                          fontSize: screenWidth * .03,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      Text(
+                                        "\t\t27",
+                                        style: TextStyle(
+                                          fontSize: screenWidth * .04,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ],
                                   )
-                                : CircleAvatar(
-                                    backgroundImage: FileImage(_image!),
-                                  ),
+                                ],
+                              ),
+                            ],
                           ),
                         ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: screenWidth * 0.04,
+                    ),
+                    Text(
+                      'Interests 👀',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
                       ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 52, 30, 76),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(30),
-                          ),
-                          // border: Border.all(
-                          //   color: Color.fromARGB(255, 89, 89, 89),
-                          //   width: 3,
-                          // ),
-                        ),
-                        padding: EdgeInsets.only(
-                          left: 10,
-                          top: 10,
-                          right: 20,
-                        ),
-                        height: screenWidth * .2,
-                        child: Row(
-                          children: [
-                            IconButton(
-                              icon: Image.asset("assets/Owl.png"),
-                              iconSize: screenWidth * .09,
-                              onPressed: () {
-                                // _matchEngine!.currentItem?.superLike();
-                              },
-                              //child:  Text("Superlike"),
-                            ),
-                            Column(
-                              children: [
-                                Text(
-                                  "You're a Hoot!",
-                                  style: TextStyle(
-                                    fontSize: screenWidth * .04,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                    height: 2,
-                                  ),
-                                ),
-                                Row(
-                                  children: [
-                                    Text(
-                                      "Hoo ",
-                                      style: TextStyle(
-                                        fontSize: screenWidth * .03,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
-                                        fontStyle: FontStyle.italic,
-                                      ),
-                                    ),
-                                    Text(
-                                      "liked you: ",
-                                      style: TextStyle(
-                                        fontSize: screenWidth * .03,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                    Text(
-                                      "\t\t27",
-                                      style: TextStyle(
-                                        fontSize: screenWidth * .04,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                          ],
+                    ),
+                    SizedBox(
+                      height: screenWidth * 0.04,
+                    ),
+                    Text(
+                      'Hobbies 🧹',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(
+                      height: screenWidth * 0.04,
+                    ),
+                    Text(
+                      'Mischiefs 😈',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(
+                      height: screenWidth * 0.04,
+                    ),
+                    Text(
+                      'Profile Information',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(height: screenWidth * .04),
+                    ListTile(
+                      leading: Icon(
+                        Icons.person,
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        'Username',
+                        style: TextStyle(
+                          fontSize: screenWidth * .04,
+                          color: Colors.white,
                         ),
                       ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: screenWidth * 0.04,
-                  ),
-                  Text(
-                    'Interests 👀',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      subtitle: Text(
+                        PrefsHelper().accountName,
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      trailing: IconButton(
+                        icon: Icon(
+                          Icons.edit,
+                          color: Colors.white,
+                        ),
+                        onPressed: () {
+                          _showUsernameDialog();
+                        },
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    height: screenWidth * 0.04,
-                  ),
-                  Text(
-                    'Hobbies 🧹',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                    ListTile(
+                      leading: Icon(
+                        Icons.email,
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        'Email',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      subtitle: Text(
+                        PrefsHelper().accountEmail,
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      trailing: IconButton(
+                        icon: Icon(Icons.edit, color: Colors.white),
+                        onPressed: () {
+                          _showEmailDialog();
+                        },
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    height: screenWidth * 0.04,
-                  ),
-                  Text(
-                    'Mischiefs 😈',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                    ListTile(
+                      leading: Icon(
+                        Icons.lock,
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        'Password',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      trailing: IconButton(
+                        icon: Icon(Icons.edit, color: Colors.white),
+                        onPressed: () {
+                          _showPasswordDialog();
+                        },
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    height: screenWidth * 0.04,
-                  ),
-                  Text(
-                    'Profile Information',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                  SizedBox(height: screenWidth * .04),
-                  ListTile(
-                    leading: Icon(
-                      Icons.person,
-                      color: Colors.white,
-                    ),
-                    title: Text(
-                      'Username',
+                    SizedBox(height: screenWidth * .05),
+                    Text(
+                      'Preferences',
                       style: TextStyle(
-                        fontSize: screenWidth * .04,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
                     ),
-                    subtitle: Text(
-                      PrefsHelper().accountName,
-                      style: TextStyle(
-                        color: Colors.white,
+                    SizedBox(height: screenWidth * .04),
+                    SwitchListTile(
+                      title: Text(
+                        'Dark Mode',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
                       ),
+                      value: false,
+                      onChanged: (value) {},
                     ),
-                    trailing: IconButton(
-                      icon: Icon(
-                        Icons.edit,
-                        color: Colors.white,
+                    SwitchListTile(
+                      title: Text(
+                        'Push Notifications',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
                       ),
-                      onPressed: () {
-                        _showUsernameDialog();
-                      },
+                      value: true,
+                      onChanged: (value) {},
                     ),
-                  ),
-                  ListTile(
-                    leading: Icon(
-                      Icons.email,
-                      color: Colors.white,
-                    ),
-                    title: Text(
-                      'Email',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                    subtitle: Text(
-                      PrefsHelper().accountEmail,
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                    trailing: IconButton(
-                      icon: Icon(Icons.edit, color: Colors.white),
-                      onPressed: () {
-                        _showEmailDialog();
-                      },
-                    ),
-                  ),
-                  ListTile(
-                    leading: Icon(
-                      Icons.lock,
-                      color: Colors.white,
-                    ),
-                    title: Text(
-                      'Password',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                    trailing: IconButton(
-                      icon: Icon(Icons.edit, color: Colors.white),
-                      onPressed: () {
-                        _showPasswordDialog();
-                      },
-                    ),
-                  ),
-                  SizedBox(height: screenWidth * .05),
-                  Text(
-                    'Preferences',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                  SizedBox(height: screenWidth * .04),
-                  SwitchListTile(
-                    title: Text(
-                      'Dark Mode',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                    value: false,
-                    onChanged: (value) {},
-                  ),
-                  SwitchListTile(
-                    title: Text(
-                      'Push Notifications',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                    value: true,
-                    onChanged: (value) {},
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
-        ),
-        Positioned.fill(
-          child: FloatingBubbles.alwaysRepeating(
-            noOfBubbles: 10,
-            colorsOfBubbles: [
-              Color.fromARGB(255, 134, 76, 175).withAlpha(30),
-              Color.fromARGB(255, 57, 11, 57),
-            ],
-            sizeFactor: 0.16,
-            opacity: 70,
-            paintingStyle: PaintingStyle.fill,
-            shape: BubbleShape.circle,
-            speed: BubbleSpeed.slow,
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 

@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		KfcPDkTwR0TN5dx67adlsEDiK5s=
+		7YITPSdQiaDq4w7g/vfJj15ZTrQ=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		+yAwdRRuWAVnnPdkSKL/fIVdQ6w=
+		1T8bk3dYcurnz5m4jWFnM683IEE=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		rDNLDZMNdIZOvaxJm1aNTKXQcs8=
+		SJIECQMxcj+jiuoGGdERq8Iw5+c=
 		</data>
 		<key>flutter_assets/assets/AppIcon1.png</key>
 		<data>
@@ -72,6 +72,10 @@
 		<data>
 		ReEajzuTzjM4cYL+jh14P2e4wsk=
 		</data>
+		<key>flutter_assets/assets/stock_profile.jpg</key>
+		<data>
+		MbJrHJWb+gbloxcHWrTSv1iGGAU=
+		</data>
 		<key>flutter_assets/assets/witch_profile.jpeg</key>
 		<data>
 		Abk1O9avyEW9fo9Ibt9Uan9E9fc=
@@ -86,7 +90,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		yuzMxamapvEwpb5vZOkKF1U6RfI=
+		KbxksWSqEbvSb7w+9QjVPt8h23Y=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -107,14 +111,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ugh+yL2W7O/IxRT8bRD+myjJm5AgGWx2Rcr3bIeBqNc=
+			eITXLkwd2CFl24QIv3Nr/6766f77+2ed7VRiG0qgDSE=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wMizGHfrYEbcJD5i7ay0qgD5ZVKIdAwGiL7VMFKTn8U=
+			jZyr5KfMg9VEpiLWZJKxH13T/GsMoEZ0AzCUB6iSHbo=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -128,7 +132,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DksyHWgfzTlzxsjp4bs5kETb2bfWiHs1+BpA7zdk8HA=
+			t28IiSqFASzJSERbtmzQqNNEyxnqa+zM4gooWilZPrA=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/AppIcon1.png</key>
@@ -215,6 +219,13 @@
 			AAn6iSHVbGVYZeMCK+hGKZJGn5sBDDiXZCcDwkVyz1g=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/stock_profile.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			phUn+mIRercN57sqf8Oc4K9AQosMm35FYXcRv1SwOcI=
+			</data>
+		</dict>
 		<key>flutter_assets/assets/witch_profile.jpeg</key>
 		<dict>
 			<key>hash2</key>
@@ -240,7 +251,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			b3djM2Hqcmsd4KYotT9BIf9E88XNIfBYzKeoYnL9fZw=
+			0U0CYtX2TSck8W6KTM5fPVJsqeR9qeYU52zEQazXwj4=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -10,16 +10,34 @@ class ConversationPage extends StatefulWidget {
 
 class _ConversationPageState extends State<ConversationPage> {
   List<String> conversations = [];
+  List<Widget> conversationImages = [];
 
   void createNewConversation() {
     setState(() {
       conversations.add('New Conversation ${conversations.length + 1}');
+
+      conversationImages.add(CircleAvatar(
+        backgroundImage: AssetImage("assets/profile-stock.jpg"),
+        // onPressed: () {},
+      ));
     });
   }
 
   void addPersonToGroupChat() {
     setState(() {
       conversations.add('Group Chat with New Person');
+      conversationImages.add(
+        Row(
+          children: [
+            CircleAvatar(
+              backgroundImage: AssetImage("assets/stock_profile.jpg"),
+            ),
+            CircleAvatar(
+              backgroundImage: AssetImage("assets/profile-stock.jpg"),
+            ),
+          ],
+        ),
+      );
     });
   }
 
@@ -54,14 +72,7 @@ class _ConversationPageState extends State<ConversationPage> {
               ),
               child: Row(
                 children: [
-                  SizedBox(
-                    height: screenWidth * .1,
-                    child: IconButton(
-                      icon: Image.asset("assets/AppIcon1.png"),
-                      onPressed: () {},
-                      // child:  Text("Nope"),
-                    ),
-                  ),
+                  conversationImages[index],
                   SizedBox(
                     width: 10,
                   ),
