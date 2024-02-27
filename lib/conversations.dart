@@ -27,15 +27,26 @@ class _ConversationPageState extends State<ConversationPage> {
     setState(() {
       conversations.add('Group Chat with New Person');
       conversationImages.add(
-        Row(
-          children: [
-            CircleAvatar(
-              backgroundImage: AssetImage("assets/stock_profile.jpg"),
-            ),
-            CircleAvatar(
-              backgroundImage: AssetImage("assets/profile-stock.jpg"),
-            ),
-          ],
+        Container(
+          height: 50,
+          width: 80,
+          child: Stack(
+            children: [
+              Positioned(
+                left: 30,
+                child: CircleAvatar(
+                  backgroundImage: AssetImage("assets/stock_profile.jpg"),
+                ),
+              ),
+              Positioned(
+                top: 5,
+                left: 10,
+                child: CircleAvatar(
+                  backgroundImage: AssetImage("assets/profile-stock.jpg"),
+                ),
+              ),
+            ],
+          ),
         ),
       );
     });
