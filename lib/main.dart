@@ -4,8 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:witch_unite/home.dart';
 import 'package:witch_unite/onboarding.dart';
+import 'package:witch_unite/prefs.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Prefs.init();
   runApp(
     MyApp(),
   );

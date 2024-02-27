@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:witch_unite/home.dart';
+import 'package:witch_unite/prefshelper.dart';
 
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({Key? key}) : super(key: key);
@@ -14,6 +15,9 @@ class OnBoardingPage extends StatefulWidget {
 
 class OnBoardingPageState extends State<OnBoardingPage> {
   final introKey = GlobalKey<IntroductionScreenState>();
+  List<bool> isSelectedList = List.generate(interests.length, (index) => false);
+  List<bool> isSelectedListHobbies =
+      List.generate(hobbies.length, (index) => false);
 
   void _onIntroEnd(context) {
     Navigator.of(context).pushReplacement(
@@ -21,40 +25,19 @@ class OnBoardingPageState extends State<OnBoardingPage> {
     );
   }
 
-  Widget _buildImage(String assetName, [double width = 350]) {
-    return Image.asset('assets/$assetName', width: width);
-  }
-
   @override
   Widget build(BuildContext context) {
-    const bodyStyle = TextStyle(fontSize: 19.0);
-
-    const pageDecoration = PageDecoration(
-      titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
-      bodyTextStyle: bodyStyle,
-      bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-      pageColor: Colors.white,
-      imagePadding: EdgeInsets.zero,
-    );
+    double screenWidth = MediaQuery.of(context).size.width;
 
     return IntroductionScreen(
       key: introKey,
-      globalBackgroundColor: Color(0xFFE9DEFC),
       allowImplicitScrolling: true,
       autoScrollDuration: 1000000000, //3000,
       infiniteAutoScroll: true,
-      // globalHeader: Align(
-      //   alignment: Alignment.topRight,
-      //   child: SafeArea(
-      //     child: Padding(
-      //       padding: const EdgeInsets.only(top: 16, right: 16),
-      //       child: _buildImage('Witch_ICON.png', 100),
-      //     ),
-      //   ),
-      // ),
+      globalBackgroundColor: Color(0xFFE9DEFC),
       globalFooter: Container(
         width: double.infinity,
-        height: 40,
+        height: 50,
         color: Color(0xFFE9DEFC),
         margin: EdgeInsets.fromLTRB(
           40,
@@ -65,22 +48,30 @@ class OnBoardingPageState extends State<OnBoardingPage> {
         child: ElevatedButton(
           child: const Text(
             'Let\'s go!',
-            style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+            style: TextStyle(
+              fontSize: 16.0,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           onPressed: () => _onIntroEnd(context),
         ),
       ),
       pages: [
         PageViewModel(
+          image: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(40)),
+            ),
+            child: Image.asset(
+              'assets/Welcome_Pic.png',
+              fit: BoxFit.cover,
+              height: double.infinity,
+              width: double.infinity,
+              alignment: Alignment.center,
+            ),
+          ),
           title: "~Welcome to Witch Trials!~",
           body: "Make acquaintances with fellow wenches 🔮",
-          image: Image.asset(
-            'assets/Welcome_Pic.png',
-            fit: BoxFit.cover,
-            height: double.infinity,
-            width: double.infinity,
-            alignment: Alignment.center,
-          ),
           decoration: PageDecoration(
             pageMargin: EdgeInsets.fromLTRB(0, 80, 0, 0),
             pageColor: Color(0xFFE9DEFC),
@@ -89,7 +80,7 @@ class OnBoardingPageState extends State<OnBoardingPage> {
         PageViewModel(
           title: "Create a Profile!",
           body:
-              "Express yourself! Create a profile that reflects your interests, hobbies, and what mischief you're up to making...",
+              "Express yourself! Create a profile that reflects your interests, hobbies, and what mischief you're up to...",
           image: Image.asset(
             'assets/profile_pic.png',
             fit: BoxFit.fitHeight,
@@ -118,63 +109,186 @@ class OnBoardingPageState extends State<OnBoardingPage> {
             pageColor: Color(0xFFE9DEFC),
           ),
         ),
-        // PageViewModel(
-        //   title: "Group Hangouts!",
-        //   body:
-        //       "Experience the magic of group hangouts! Arrange gatherings with matched users to expand your circle and embark on new adventures together.",
-        //   image: _buildFullscreenImage(),
-        //   decoration: pageDecoration.copyWith(
-        //     contentMargin: const EdgeInsets.symmetric(horizontal: 16),
-        //     fullScreen: true,
-        //     bodyFlex: 2,
-        //     imageFlex: 3,
-        //     safeArea: 100,
-        //   ),
-        // ),
-        // PageViewModel(
-        //   title: "Another title page",
-        //   body: "Another beautiful body text for this example onboarding",
-        //   image: _buildImage('flutter.png'),
-        //   footer: ElevatedButton(
-        //     onPressed: () {
-        //       introKey.currentState?.animateScroll(0);
-        //     },
-        //     style: ElevatedButton.styleFrom(
-        //       backgroundColor: Colors.lightBlue,
-        //       shape: RoundedRectangleBorder(
-        //         borderRadius: BorderRadius.circular(8.0),
-        //       ),
-        //     ),
-        //     child: const Text(
-        //       'FooButton',
-        //       style: TextStyle(color: Colors.white),
-        //     ),
-        //   ),
-        //   decoration: pageDecoration.copyWith(
-        //     bodyFlex: 6,
-        //     imageFlex: 6,
-        //     safeArea: 80,
-        //   ),
-        // ),
-        // PageViewModel(
-        // title: "Title of last page - reversed",
-        // bodyWidget: const Row(
-        //   mainAxisAlignment: MainAxisAlignment.center,
-        //   children: [
-        //     Text("Click on ", style: bodyStyle),
-        //     Icon(Icons.edit),
-        //     Text(" to edit a post", style: bodyStyle),
-        //   ],
-        // ),
-        // decoration: pageDecoration.copyWith(
-        //   bodyFlex: 2,
-        //   imageFlex: 4,
-        //   bodyAlignment: Alignment.bottomCenter,
-        //   imageAlignment: Alignment.topCenter,
-        // ),
-        // image: _buildImage('flutter.png'),
-        // reverse: true,
-        // ),
+        PageViewModel(
+          title: "Group Hangouts!",
+          body:
+              "Experience the magic of group hangouts! Arrange gatherings with matched users to expand your circle and embark on new adventures together.",
+          image: Image.asset(
+            'assets/SwipeExample.png',
+            fit: BoxFit.fitHeight,
+            height: double.infinity,
+            width: double.infinity,
+            alignment: Alignment.center,
+          ),
+          decoration: PageDecoration(
+            pageMargin: EdgeInsets.fromLTRB(0, 100, 0, 0),
+            pageColor: Color(0xFFE9DEFC),
+          ),
+        ),
+        PageViewModel(
+          title: "Set your interests!",
+          body: "Let us know what you'd like to explore",
+          image: SingleChildScrollView(
+            child: Container(
+              margin: EdgeInsets.fromLTRB(
+                20,
+                0,
+                20,
+                20,
+              ),
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Color.fromARGB(255, 66, 37, 117),
+                  width: 4,
+                ),
+                borderRadius: BorderRadius.all(Radius.circular(43)),
+              ),
+              padding: EdgeInsets.fromLTRB(
+                20,
+                40,
+                20,
+                30,
+              ),
+              child: Wrap(
+                spacing: 5,
+                direction: Axis.horizontal,
+                children: List.generate(interests.length, (index) {
+                  return TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: isSelectedList[index]
+                          ? Color.fromARGB(255, 207, 187, 224)
+                          : Color.fromARGB(255, 242, 223, 254),
+                      padding: EdgeInsets.fromLTRB(
+                        screenWidth * .02,
+                        0,
+                        screenWidth * .02,
+                        0,
+                      ),
+                      elevation: 3,
+                      shadowColor: Colors.deepPurple,
+                      side: BorderSide(
+                        width: 2,
+                        color: isSelectedList[index]
+                            ? Color.fromARGB(255, 111, 93, 135)
+                            : Color.fromARGB(255, 177, 151, 199),
+                      ),
+                    ),
+                    child: Text(
+                      interests[index],
+                      style: TextStyle(
+                        fontSize: screenWidth * .04,
+                      ),
+                    ),
+                    onPressed: () {
+                      // Toggle the selected state
+                      List<String> thisList = PrefsHelper().savedInterests;
+
+                      isSelectedList[index]
+                          ? thisList.remove(interests[index])
+                          : thisList.insert(
+                              0,
+                              interests[index].toString(),
+                            );
+
+                      isSelectedList[index] = !isSelectedList[
+                          index]; // Toggle the selected state of the button at index
+
+                      PrefsHelper().savedInterests = thisList;
+                      print(PrefsHelper().savedInterests);
+                      setState(() {});
+                    },
+                  );
+                }),
+              ),
+            ),
+          ),
+          decoration: PageDecoration(
+            pageMargin: EdgeInsets.fromLTRB(0, 100, 0, 0),
+            pageColor: Color(0xFFE9DEFC),
+          ),
+        ),
+        PageViewModel(
+          title: "Hobbies?",
+          body: "Let us know what mischief you're up to",
+          image: SingleChildScrollView(
+            child: Container(
+              margin: EdgeInsets.fromLTRB(
+                20,
+                0,
+                20,
+                20,
+              ),
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Color.fromARGB(255, 66, 37, 117),
+                  width: 4,
+                ),
+                borderRadius: BorderRadius.all(Radius.circular(43)),
+              ),
+              padding: EdgeInsets.fromLTRB(
+                20,
+                40,
+                20,
+                30,
+              ),
+              child: Wrap(
+                spacing: 5,
+                direction: Axis.horizontal,
+                children: List.generate(hobbies.length, (index) {
+                  return TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: isSelectedListHobbies[index]
+                          ? Color.fromARGB(255, 207, 187, 224)
+                          : Color.fromARGB(255, 242, 223, 254),
+                      padding: EdgeInsets.fromLTRB(
+                        screenWidth * .02,
+                        0,
+                        screenWidth * .02,
+                        0,
+                      ),
+                      elevation: 3,
+                      shadowColor: Colors.deepPurple,
+                      side: BorderSide(
+                        width: 2,
+                        color: isSelectedListHobbies[index]
+                            ? Color.fromARGB(255, 111, 93, 135)
+                            : Color.fromARGB(255, 177, 151, 199),
+                      ),
+                    ),
+                    child: Text(
+                      hobbies[index],
+                      style: TextStyle(
+                        fontSize: screenWidth * .04,
+                      ),
+                    ),
+                    onPressed: () {
+                      // Toggle the selected state
+                      List<String> thisList = PrefsHelper().savedHobbies;
+
+                      isSelectedListHobbies[index]
+                          ? thisList.remove(hobbies[index])
+                          : thisList.insert(
+                              0,
+                              hobbies[index].toString(),
+                            );
+
+                      isSelectedListHobbies[index] = !isSelectedListHobbies[
+                          index]; // Toggle the selected state of the button at index
+
+                      PrefsHelper().savedHobbies = thisList;
+                      print(PrefsHelper().savedHobbies);
+                      setState(() {});
+                    },
+                  );
+                }),
+              ),
+            ),
+          ),
+          decoration: PageDecoration(
+            pageMargin: EdgeInsets.fromLTRB(0, 100, 0, 0),
+            pageColor: Color(0xFFE9DEFC),
+          ),
+        ),
       ],
       onDone: () => _onIntroEnd(context),
       onSkip: () => _onIntroEnd(context), // You can override onSkip callback
