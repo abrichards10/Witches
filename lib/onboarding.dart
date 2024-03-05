@@ -15,9 +15,20 @@ class OnBoardingPage extends StatefulWidget {
 
 class OnBoardingPageState extends State<OnBoardingPage> {
   final introKey = GlobalKey<IntroductionScreenState>();
-  List<bool> isSelectedList = List.generate(interests.length, (index) => false);
-  List<bool> isSelectedListHobbies =
-      List.generate(hobbies.length, (index) => false);
+  List<bool> isSelectedListInterests =
+      List.generate(interests.length, (index) => false);
+  List<String> thisInterestsList = []; // Initialize list here
+
+  @override
+  void initState() {
+    super.initState();
+    // Retrieve saved interests from PrefsHelper
+    thisInterestsList = PrefsHelper().savedInterests;
+    // Update isSelectedListInterests based on saved interests
+    for (int i = 0; i < interests.length; i++) {
+      isSelectedListInterests[i] = thisInterestsList.contains(interests[i]);
+    }
+  }
 
   void _onIntroEnd(context) {
     Navigator.of(context).pushReplacement(
@@ -71,7 +82,7 @@ class OnBoardingPageState extends State<OnBoardingPage> {
             ),
           ),
           title: "~Welcome to Witch Trials!~",
-          body: "Make acquaintances with fellow wenches 🔮",
+          body: "Make acquaintances with fellow witches \n🔮",
           decoration: PageDecoration(
             pageMargin: EdgeInsets.fromLTRB(0, 80, 0, 0),
             pageColor: Color(0xFFE9DEFC),
@@ -138,7 +149,12 @@ class OnBoardingPageState extends State<OnBoardingPage> {
               ),
               decoration: BoxDecoration(
                 border: Border.all(
-                  color: Color.fromARGB(255, 66, 37, 117),
+                  color: Color.fromARGB(
+                    255,
+                    66,
+                    37,
+                    117,
+                  ),
                   width: 4,
                 ),
                 borderRadius: BorderRadius.all(Radius.circular(43)),
@@ -155,7 +171,7 @@ class OnBoardingPageState extends State<OnBoardingPage> {
                 children: List.generate(interests.length, (index) {
                   return TextButton(
                     style: TextButton.styleFrom(
-                      backgroundColor: isSelectedList[index]
+                      backgroundColor: isSelectedListInterests[index]
                           ? Color.fromARGB(255, 207, 187, 224)
                           : Color.fromARGB(255, 242, 223, 254),
                       padding: EdgeInsets.fromLTRB(
@@ -168,7 +184,7 @@ class OnBoardingPageState extends State<OnBoardingPage> {
                       shadowColor: Colors.deepPurple,
                       side: BorderSide(
                         width: 2,
-                        color: isSelectedList[index]
+                        color: isSelectedListInterests[index]
                             ? Color.fromARGB(255, 111, 93, 135)
                             : Color.fromARGB(255, 177, 151, 199),
                       ),
@@ -180,103 +196,16 @@ class OnBoardingPageState extends State<OnBoardingPage> {
                       ),
                     ),
                     onPressed: () {
-                      // Toggle the selected state
-                      List<String> thisList = PrefsHelper().savedInterests;
+                      if (isSelectedListInterests[index]) {
+                        thisInterestsList.remove(interests[index]);
+                      } else {
+                        thisInterestsList.add(interests[index]);
+                      }
 
-                      isSelectedList[index]
-                          ? thisList.remove(interests[index])
-                          : thisList.insert(
-                              0,
-                              interests[index].toString(),
-                            );
-
-                      isSelectedList[index] = !isSelectedList[
-                          index]; // Toggle the selected state of the button at index
-
-                      PrefsHelper().savedInterests = thisList;
-                      print(PrefsHelper().savedInterests);
-                      setState(() {});
-                    },
-                  );
-                }),
-              ),
-            ),
-          ),
-          decoration: PageDecoration(
-            pageMargin: EdgeInsets.fromLTRB(0, 100, 0, 0),
-            pageColor: Color(0xFFE9DEFC),
-          ),
-        ),
-        PageViewModel(
-          title: "Hobbies?",
-          body: "Let us know what mischief you're up to",
-          image: SingleChildScrollView(
-            child: Container(
-              margin: EdgeInsets.fromLTRB(
-                20,
-                0,
-                20,
-                20,
-              ),
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Color.fromARGB(255, 66, 37, 117),
-                  width: 4,
-                ),
-                borderRadius: BorderRadius.all(Radius.circular(43)),
-              ),
-              padding: EdgeInsets.fromLTRB(
-                20,
-                40,
-                20,
-                30,
-              ),
-              child: Wrap(
-                spacing: 5,
-                direction: Axis.horizontal,
-                children: List.generate(hobbies.length, (index) {
-                  return TextButton(
-                    style: TextButton.styleFrom(
-                      backgroundColor: isSelectedListHobbies[index]
-                          ? Color.fromARGB(255, 207, 187, 224)
-                          : Color.fromARGB(255, 242, 223, 254),
-                      padding: EdgeInsets.fromLTRB(
-                        screenWidth * .02,
-                        0,
-                        screenWidth * .02,
-                        0,
-                      ),
-                      elevation: 3,
-                      shadowColor: Colors.deepPurple,
-                      side: BorderSide(
-                        width: 2,
-                        color: isSelectedListHobbies[index]
-                            ? Color.fromARGB(255, 111, 93, 135)
-                            : Color.fromARGB(255, 177, 151, 199),
-                      ),
-                    ),
-                    child: Text(
-                      hobbies[index],
-                      style: TextStyle(
-                        fontSize: screenWidth * .04,
-                      ),
-                    ),
-                    onPressed: () {
-                      // Toggle the selected state
-                      List<String> thisList = PrefsHelper().savedHobbies;
-
-                      isSelectedListHobbies[index]
-                          ? thisList.remove(hobbies[index])
-                          : thisList.insert(
-                              0,
-                              hobbies[index].toString(),
-                            );
-
-                      isSelectedListHobbies[index] = !isSelectedListHobbies[
-                          index]; // Toggle the selected state of the button at index
-
-                      PrefsHelper().savedHobbies = thisList;
-                      print(PrefsHelper().savedHobbies);
+                      isSelectedListInterests[index] =
+                          !isSelectedListInterests[index];
+                      PrefsHelper().savedInterests = thisInterestsList;
+                      print("Interests ${PrefsHelper().savedInterests}");
                       setState(() {});
                     },
                   );

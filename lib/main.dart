@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:witch_unite/bloc/home_bloc.dart';
 import 'package:witch_unite/home.dart';
 import 'package:witch_unite/onboarding.dart';
 import 'package:witch_unite/prefs.dart';
@@ -33,40 +35,50 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      locale: _locale,
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // fontFamily: GoogleFonts.labrada().fontFamily,
-        // fontFamily: GoogleFonts.eagleLake().fontFamily,
-        // fontFamily: GoogleFonts.quando().fontFamily,
-        // fontFamily: GoogleFonts.barriecito().fontFamily,
-        // fontFamily: GoogleFonts.caveat().fontFamily,
-        // fontFamily: GoogleFonts.shadowsIntoLightTwo().fontFamily, // cool
-        // fontFamily: GoogleFonts.indieFlower().fontFamily, // cool
-        fontFamily: GoogleFonts.shantellSans().fontFamily, // cool
-
-        appBarTheme: AppBarTheme(
-          backgroundColor: Color.fromARGB(255, 24, 10, 30),
-          titleTextStyle: TextStyle(
-            color: Colors.white,
+    return RepositoryProvider(
+      create: (context) => ApiService(),
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider<HomeBloc>(
+              create: (context) =>
+                  HomeBloc(RepositoryProvider.of<ApiService>(context))),
+        ],
+        child: MaterialApp(
+          locale: _locale,
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter Demo',
+          theme: ThemeData(
             // fontFamily: GoogleFonts.labrada().fontFamily,
+            // fontFamily: GoogleFonts.eagleLake().fontFamily,
             // fontFamily: GoogleFonts.quando().fontFamily,
+            // fontFamily: GoogleFonts.barriecito().fontFamily,
+            // fontFamily: GoogleFonts.caveat().fontFamily,
+            // fontFamily: GoogleFonts.shadowsIntoLightTwo().fontFamily, // cool
+            // fontFamily: GoogleFonts.indieFlower().fontFamily, // cool
             fontFamily: GoogleFonts.shantellSans().fontFamily, // cool
-          ),
-        ),
 
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          backgroundColor: Color(0xFFE9DEFC),
+            appBarTheme: AppBarTheme(
+              backgroundColor: Color.fromARGB(255, 24, 10, 30),
+              titleTextStyle: TextStyle(
+                color: Colors.white,
+                // fontFamily: GoogleFonts.labrada().fontFamily,
+                // fontFamily: GoogleFonts.quando().fontFamily,
+                fontFamily: GoogleFonts.shantellSans().fontFamily, // cool
+              ),
+            ),
+
+            bottomNavigationBarTheme: BottomNavigationBarThemeData(
+              backgroundColor: Color(0xFFE9DEFC),
+            ),
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.deepPurple,
+              background: Color.fromARGB(255, 24, 10, 30),
+            ),
+            useMaterial3: true,
+          ),
+          home: OnBoardingPage(),
         ),
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
-          background: Color.fromARGB(255, 24, 10, 30),
-        ),
-        useMaterial3: true,
       ),
-      home: OnBoardingPage(),
     );
   }
 }

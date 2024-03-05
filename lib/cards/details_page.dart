@@ -54,8 +54,8 @@ class _DetailsPageState extends State<DetailsPage> {
                             24.0,
                           ),
                           child: Image.network(
-                            // widget.avatar,
-                            "https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?cs=srgb&dl=pexels-hitesh-choudhary-3532552.jpg&fm=jpg",
+                            widget.avatar,
+                            // "https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?cs=srgb&dl=pexels-hitesh-choudhary-3532552.jpg&fm=jpg",
 
                             fit: BoxFit.cover,
                           ),

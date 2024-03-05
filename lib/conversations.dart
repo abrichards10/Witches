@@ -4,6 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class ConversationPage extends StatefulWidget {
+  final userData;
+
+  ConversationPage({
+    Key? key,
+    required this.userData,
+  }) : super(key: key);
+
   @override
   _ConversationPageState createState() => _ConversationPageState();
 }
@@ -14,7 +21,7 @@ class _ConversationPageState extends State<ConversationPage> {
 
   void createNewConversation() {
     setState(() {
-      conversations.add('New Conversation ${conversations.length + 1}');
+      conversations.add(widget.userData[0]['name']['first']);
 
       conversationImages.add(CircleAvatar(
         backgroundImage: AssetImage("assets/profile-stock.jpg"),
@@ -25,9 +32,10 @@ class _ConversationPageState extends State<ConversationPage> {
 
   void addPersonToGroupChat() {
     setState(() {
-      conversations.add('Group Chat with New Person');
+      conversations.add(widget.userData[0]['name']['first']);
+      conversations.add(widget.userData[1]['name']['first']);
       conversationImages.add(
-        Container(
+        SizedBox(
           height: 50,
           width: 80,
           child: Stack(
@@ -72,33 +80,51 @@ class _ConversationPageState extends State<ConversationPage> {
       body: ListView.builder(
         itemCount: conversations.length,
         itemBuilder: (context, index) {
-          return ListTile(
-            title: Container(
-              padding: EdgeInsets.all(30),
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 52, 30, 76),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(40),
-                ),
-              ),
-              child: Row(
-                children: [
-                  conversationImages[index],
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    conversations[index],
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
+          return Dismissible(
+            background: Container(
+              alignment: Alignment.centerRight,
+              padding: EdgeInsets.only(right: 30),
+              color: const Color.fromARGB(255, 107, 29, 23),
+              child: Icon(
+                Icons.delete,
+                color: Colors.black,
+                size: screenWidth * .07,
               ),
             ),
-            onTap: () {
-              // Navigate to the selected conversation
+            key: ValueKey<String>(conversations[index]),
+            onDismissed: (DismissDirection direction) {
+              setState(() {
+                conversations.removeAt(index);
+              });
             },
+            child: ListTile(
+              title: Container(
+                padding: EdgeInsets.all(30),
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 52, 30, 76),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(40),
+                  ),
+                ),
+                child: Row(
+                  children: [
+                    conversationImages[index],
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      conversations[index],
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              onTap: () {
+                // Navigate to the selected conversation
+              },
+            ),
           );
         },
       ),
@@ -125,10 +151,4 @@ class _ConversationPageState extends State<ConversationPage> {
       ),
     );
   }
-}
-
-void main() {
-  runApp(MaterialApp(
-    home: ConversationPage(),
-  ));
 }

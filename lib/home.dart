@@ -22,7 +22,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final String url = "https://randomuser.me/api/?results=50";
   bool isLoading = true;
-  late List usersData;
+  late List usersData = [];
   final List<SwipeItem> _swipeItems = <SwipeItem>[];
   MatchEngine? _matchEngine;
   final GlobalKey<ScaffoldMessengerState> _scaffoldKey =
@@ -147,11 +147,11 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(24.0),
-                                    child: Image.asset(
+                                    child: Image.network(
                                       // TODO: change to .network
-                                      "assets/final-1.jpg",
-                                      // usersData[index]['picture']
-                                      //     ['large'], //TODO: GETS PICTURE
+                                      // "assets/final-1.jpg",
+                                      usersData[index]['picture']
+                                          ['large'], //TODO: GETS PICTURE
                                       fit: BoxFit.cover,
                                     ),
                                   ),
@@ -469,7 +469,9 @@ class _HomePageState extends State<HomePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => ConversationPage(),
+                        builder: (context) => ConversationPage(
+                          userData: usersData,
+                        ),
                       ),
                     );
                   },

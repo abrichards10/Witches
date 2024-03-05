@@ -128,9 +128,6 @@ class PrefsHelper {
   String get location => Prefs.getString(PrefKeys.klocation) ?? "San Francisco";
 
   List<String> get savedInterests =>
-      Prefs.getStringList(PrefKeys.ksavedHobbies) ?? [];
-
-  List<String> get savedHobbies =>
       Prefs.getStringList(PrefKeys.ksavedInterests) ?? [];
 
   set accountName(String value) => Prefs.setString(PrefKeys.kname, value);
@@ -144,7 +141,4 @@ class PrefsHelper {
 
   set savedInterests(List<String> value) =>
       Prefs.setStringList(PrefKeys.ksavedInterests, value);
-
-  set savedHobbies(List<String> value) =>
-      Prefs.setStringList(PrefKeys.ksavedHobbies, value);
 }

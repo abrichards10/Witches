@@ -20,6 +20,10 @@ class _AccountPageState extends State<AccountPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
+  List<bool> isSelectedListInterests =
+      List.generate(interests.length, (index) => false);
+  List<String> thisInterestsList = []; // Initialize list here
+
   Future<void> _getImage() async {
     final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
 
@@ -41,7 +45,8 @@ class _AccountPageState extends State<AccountPage> {
       child: Stack(
         children: [
           Positioned.fill(
-            child: FloatingBubbles.alwaysRepeating(
+            child: FloatingBubbles(
+              duration: 3,
               noOfBubbles: 10,
               colorsOfBubbles: [
                 Color.fromARGB(255, 134, 76, 175).withAlpha(30),
@@ -195,6 +200,55 @@ class _AccountPageState extends State<AccountPage> {
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
+                    ),
+                    Wrap(
+                      spacing: 5,
+                      direction: Axis.horizontal,
+                      children: List.generate(
+                          PrefsHelper().savedInterests.length, (index) {
+                        return TextButton(
+                          style: TextButton.styleFrom(
+                            backgroundColor: isSelectedListInterests[index]
+                                ? Color.fromARGB(255, 207, 187, 224)
+                                : Color.fromARGB(255, 242, 223, 254),
+                            padding: EdgeInsets.fromLTRB(
+                              screenWidth * .02,
+                              0,
+                              screenWidth * .02,
+                              0,
+                            ),
+                            elevation: 3,
+                            shadowColor: Colors.deepPurple,
+                            side: BorderSide(
+                              width: 2,
+                              color: isSelectedListInterests[index]
+                                  ? Color.fromARGB(255, 111, 93, 135)
+                                  : Color.fromARGB(255, 177, 151, 199),
+                            ),
+                          ),
+                          child: Text(
+                            PrefsHelper().savedInterests[index],
+                            style: TextStyle(
+                              fontSize: screenWidth * .04,
+                            ),
+                          ),
+                          onPressed: () {
+                            if (isSelectedListInterests[index]) {
+                              thisInterestsList
+                                  .remove(PrefsHelper().savedInterests[index]);
+                            } else {
+                              thisInterestsList
+                                  .add(PrefsHelper().savedInterests[index]);
+                            }
+
+                            isSelectedListInterests[index] =
+                                !isSelectedListInterests[index];
+                            PrefsHelper().savedInterests = thisInterestsList;
+                            print("Interests ${PrefsHelper().savedInterests}");
+                            setState(() {});
+                          },
+                        );
+                      }),
                     ),
                     SizedBox(
                       height: screenWidth * 0.04,
